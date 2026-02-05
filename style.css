@@ -146,4 +146,16 @@ iframe {
   background: rgba(0,0,0,0.55);
   padding: 120px 0;
 }
+.gform-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* Visually reduce Google footer presence */
+iframe {
+  filter: contrast(1.05);
+}
+
 
