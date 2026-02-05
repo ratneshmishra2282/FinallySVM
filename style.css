@@ -10,6 +10,30 @@ body {
   background: #ffffff;
   line-height: 1.6;
 }
+body.dark {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+body.dark .header,
+body.dark .footer {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark nav a {
+  color: #cbd5f5;
+}
+
+body.dark .card {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark .hero-overlay {
+  background: rgba(0,0,0,0.7);
+}
+
 
 .container {
   width: 90%;
