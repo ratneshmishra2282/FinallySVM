@@ -138,3 +138,8 @@ form button {
 copyright {
   text-align: center;
 }
+iframe {
+  border-radius: 8px;
+  background: #ffffff;
+}
+
