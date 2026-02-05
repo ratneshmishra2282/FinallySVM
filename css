@@ -7,14 +7,10 @@ statvion-infotech/
 ├── careers.html
 ├── contact.html
 │
-├── includes/
-│   ├── header.html
-│   └── footer.html
+├── header.html
+├── footer.html
+├── style.css
+├── main.js
 │
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── images/
-│       └── logo.png   ← your provided logo
+└── images/
+    └── logo.png
