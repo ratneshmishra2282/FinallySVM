@@ -1,229 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Statvion Infotech</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Statvion Infotech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ========== GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+}
+
+section {
+  padding: 60px 5%;
+}
+
+/* ========== HEADER ========== */
+header {
+  background: #ffffff;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 45px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 5px;
+}
+
+/* ========== DROPDOWN PANEL ========== */
+.dropdown-window {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 600px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 25px;
+}
+
+.dropdown:hover .dropdown-window {
+  display: flex;
+}
+
+.dropdown-left {
+  width: 80%;
+  padding-right: 20px;
+}
+
+.dropdown-left p {
+  margin-bottom: 12px;
+}
+
+.dropdown-right {
+  width: 20%;
+}
+
+.dropdown-right img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ========== HERO SECTIONS ========== */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.6);
+  padding: 25px;
+  border-radius: 6px;
+}
+
+/* ========== HERO 3 SPLIT ========== */
+.hero-3 {
+  display: flex;
+}
+
+.hero-3-left,
+.hero-3-right {
+  width: 50%;
+}
+
+.hero-3-left img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.hero-3-right {
+  background: #1E88E5;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* ========== SIX BLOCKS ========== */
+.six-blocks {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.block {
+  padding: 25px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.block:nth-child(odd) {
+  background: #F28C28; /* Saffron */
+}
+
+.block:nth-child(even) {
+  background: #1E88E5; /* Skyblue */
+}
+
+/* ========== VALUE SECTION ========== */
+.value-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.value-text {
+  width: 50%;
+}
+
+.value-image {
+  width: 50%;
+}
+
+.value-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #0b1220;
+  color: #fff;
+  padding: 60px 5%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1200px){
+  .six-blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width:768px){
+  nav ul {
+    display: none;
+  }
+
+  .hero-3 {
+    flex-direction: column;
+  }
+
+  .hero-3-left,
+  .hero-3-right {
+    width: 100%;
+  }
+
+  .six-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-section {
+    flex-direction: column;
+  }
+
+  .value-text,
+  .value-image {
+    width: 100%;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header>
-
-  <div class="header-container">
-
-    <!-- Logo -->
-    <div class="logo">
-      <img src="images/logo.png" alt="Statvion Infotech Logo">
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-
-      <ul class="main-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-
-        <!-- SERVICES DROPDOWN -->
-        <li class="dropdown">
-          <a href="#">Services</a>
-
-          <div class="dropdown-window">
-
-            <!-- LEFT 80% -->
-            <div class="dropdown-left">
-              <!-- Content will be provided later -->
-              <p>Service Option 1</p>
-              <p>Service Option 2</p>
-              <p>Service Option 3</p>
-            </div>
-
-            <!-- RIGHT 20% IMAGE -->
-            <div class="dropdown-right">
-              <img src="images/services-dropdown.jpg" alt="Services Image">
-            </div>
-
-          </div>
-        </li>
-
-        <!-- SECTORS DROPDOWN -->
-        <li class="dropdown">
-          <a href="#">Sectors</a>
-
-          <div class="dropdown-window">
-
-            <!-- LEFT 80% -->
-            <div class="dropdown-left">
-              <p>Sector 1</p>
-              <p>Sector 2</p>
-              <p>Sector 3</p>
-            </div>
-
-            <!-- RIGHT 20% IMAGE -->
-            <div class="dropdown-right">
-              <img src="images/sectors-dropdown.jpg" alt="Sectors Image">
-            </div>
-
-          </div>
-        </li>
-
-        <li><a href="#">Career</a></li>
-        <li><a href="#">Contact Us</a></li>
-
-      </ul>
-
-      <!-- Hamburger (for small screens) -->
-      <div class="hamburger">
-        ☰
-      </div>
-
-    </nav>
-
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
   </div>
 
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-window">
+          <div class="dropdown-left">
+            <p>Enterprise Software</p>
+            <p>SAP & ERP</p>
+            <p>Analytics</p>
+          </div>
+          <div class="dropdown-right">
+            <img src="images/services-dropdown.jpg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Sectors</a>
+        <div class="dropdown-window">
+          <div class="dropdown-left">
+            <p>Enterprise</p>
+            <p>Government</p>
+            <p>Education</p>
+          </div>
+          <div class="dropdown-right">
+            <img src="images/sectors-dropdown.jpg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#">Career</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
 </header>
 
-
-<!-- ================= HERO 1 ================= -->
-<section class="hero-1">
-  <img src="images/hero1.jpg" alt="Hero Image 1">
-
+<!-- HERO 1 -->
+<section class="hero">
+  <img src="images/hero1.jpg">
   <div class="hero-text">
     <h1>Transforming businesses through technology</h1>
-    <h2>End-to-end IT solutions, delivered with purpose</h2>
+    <p>End-to-end IT solutions, delivered with purpose</p>
   </div>
 </section>
 
-
-<!-- ================= HERO 2 ================= -->
-<section class="hero-2">
-  <img src="images/hero2.jpg" alt="Hero Image 2">
-
+<!-- HERO 2 -->
+<section class="hero">
+  <img src="images/hero2.jpg">
   <div class="hero-text">
     <h2>Trusted SAP, ERP, Analytics & Cloud Partner for Enterprise-Scale Transformation.</h2>
   </div>
 </section>
 
-
-<!-- ================= HERO 3 (SPLIT SECTION) ================= -->
+<!-- HERO 3 -->
 <section class="hero-3">
-
-  <!-- LEFT IMAGE (50%) -->
   <div class="hero-3-left">
-    <img src="images/hero3.jpg" alt="Hero Image 3">
+    <img src="images/hero3.jpg">
   </div>
-
-  <!-- RIGHT TEXT (50%) -->
   <div class="hero-3-right">
     <h2>Technology. Strategy. Execution.</h2>
-    <h3>Powering digital transformation.</h3>
+    <p>Powering digital transformation.</p>
   </div>
-
 </section>
 
-
-<!-- ================= ITEM 5 : SIX BLOCKS ================= -->
+<!-- SIX BLOCKS -->
 <section class="six-blocks">
-
-  <div class="block"> 
-    <h3>Who We Are</h3>
-    <p>Statvion Infotech is an end-to-end IT services and business consultancy firm focused on building reliable and scalable digital systems.</p>
-  </div>
-
-  <div class="block">
-    <h3>How We Think</h3>
-    <p>We align technology decisions with business purpose, balancing innovation with governance and long-term value.</p>
-  </div>
-
-  <div class="block">
-    <h3>What We Enable</h3>
-    <p>We help organizations modernize platforms, integrate systems, and leverage data for smarter operations.</p>
-  </div>
-
-  <div class="block">
-    <h3>Why Statvion Infotech</h3>
-    <p>We combine technical depth with business understanding across the full lifecycle of engagement.</p>
-  </div>
-
-  <div class="block">
-    <h3>How We Work</h3>
-    <p>Our model emphasizes clarity, accountability, collaboration, and disciplined execution.</p>
-  </div>
-
-  <div class="block">
-    <h3>Start a Strategy Discussion</h3>
-    <p>Engage with our team to explore practical pathways for transformation and growth.</p>
-  </div>
-
+  <div class="block"><h3>Who We Are</h3><p>End-to-end IT consultancy.</p></div>
+  <div class="block"><h3>How We Think</h3><p>Business-aligned decisions.</p></div>
+  <div class="block"><h3>What We Enable</h3><p>Modernized platforms.</p></div>
+  <div class="block"><h3>Why Statvion</h3><p>Lifecycle ownership.</p></div>
+  <div class="block"><h3>How We Work</h3><p>Disciplined execution.</p></div>
+  <div class="block"><h3>Start Discussion</h3><p>Let’s talk strategy.</p></div>
 </section>
 
-
-<!-- ================= ITEM 6 : HOW WE CREATE VALUE ================= -->
+<!-- VALUE SECTION -->
 <section class="value-section">
-
-  <!-- TEXT -->
   <div class="value-text">
     <h2>How We Create Value</h2>
-    <p>
-      We focus on outcomes that matter — improving operational efficiency,
-      strengthening system reliability, enabling better data-driven decisions,
-      reducing technology risk, and supporting long-term sustainability.
-    </p>
+    <p>Operational efficiency, scalability, reduced risk, sustainability.</p>
   </div>
-
-  <!-- RANDOM IMAGE -->
   <div class="value-image">
-    <img src="images/value.jpg" alt="Enterprise Value Image">
+    <img src="images/value.jpg">
   </div>
-
 </section>
 
-
-<!-- ================= ENLARGED FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
-
   <div class="footer-container">
-
     <div class="footer-column">
       <h4>Statvion Infotech</h4>
-      <p>End-to-End IT Services & Business Consultancy</p>
+      <p>End-to-End IT Services</p>
     </div>
-
     <div class="footer-column">
-      <h4>Quick Links</h4>
+      <h4>Links</h4>
       <ul>
         <li>Home</li>
-        <li>About Us</li>
+        <li>About</li>
         <li>Services</li>
-        <li>Sectors</li>
-        <li>Career</li>
-        <li>Contact Us</li>
       </ul>
     </div>
-
     <div class="footer-column">
       <h4>Capabilities</h4>
       <ul>
-        <li>Software Development</li>
-        <li>SAP & ERP</li>
-        <li>Data & Analytics</li>
-        <li>Cloud Solutions</li>
+        <li>Software</li>
+        <li>Analytics</li>
       </ul>
     </div>
-
     <div class="footer-column">
       <h4>Contact</h4>
       <p>statvioninfotech@gmail.com</p>
     </div>
-
   </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Statvion Infotech. All rights reserved.</p>
-  </div>
-
 </footer>
-
 
 </body>
 </html>
